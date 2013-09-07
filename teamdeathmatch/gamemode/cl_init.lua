@@ -37,20 +37,20 @@ end
   
   function Blue_Team( ply ) 
  
-     ply:SetTeam( 1 ) //Make the player join team 1 
+     ply:SetTeam( 1 ) --Make the player join team 1 
 	 ply:Spawn()
  end 
  
  function Orange_Team( ply ) 
  
-     ply:SetTeam( 2 ) //Make the player join team 2 
+     ply:SetTeam( 2 ) --Make the player join team 2 
 	 ply:Spawn()
 
 end
 concommand.Add( "team_menu", set_team )
  
-concommand.Add( "Blue_Team", Blue_Team ) //Add the command to set the players team to team 1 
-concommand.Add( "Orange_Team", Orange_Team ) //Add the command to set the players team to team 2 
+concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
+concommand.Add( "Orange_Team", Orange_Team ) --Add the command to set the players team to team 2 
 
 --[[---------------------------------------------------------
    Name: gamemode:Initialize( )
