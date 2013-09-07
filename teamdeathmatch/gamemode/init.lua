@@ -13,11 +13,7 @@ function blue( ply )
  
     ply:SetTeam( 1 )
     ply:Spawn()
-    ply:StripWeapons()
-    ply:Give( "weapon_crossbow" )
-    ply:Give( "weapon_crowbar" )
-    ply:GiveAmmo(50, "XBowBolt")
- 
+    supplyblue( ply )
 end
 concommand.Add( "blue", blue )
  
@@ -25,10 +21,8 @@ function orange( ply )
  
     ply:SetTeam( 2 )
     ply:Spawn()
-    ply:StripWeapons()
-    ply:Give( "weapon_pistol" )
-    ply:Give( "weapon_stunstick" )
-    ply:GiveAmmo(100, "Pistol")
+    supplyorange( ply )
+    --ply:SetFOV(100, 5)
 end
 concommand.Add( "orange", orange )
 
@@ -38,7 +32,22 @@ end
 
 concommand.Add( "banane", banane)
 
+function supplyblue( ply )
+	ply:StripWeapons()
+    ply:Give( "weapon_crossbow" )
+    ply:Give( "weapon_crowbar" )
+    ply:GiveAmmo(50, "XBowBolt")
+    ply:SetHealth(150)
+end
+concommand.Add("supplyblue", supplyblue)
 
+function supplyorange( ply )
+	ply:StripWeapons()
+    ply:Give( "weapon_pistol" )
+   	ply:Give( "weapon_stunstick" )
+    ply:GiveAmmo(100, "Pistol")
+    ply:SetHealth(150)
+end
 
 
  
@@ -83,7 +92,6 @@ end
 function GM:DoPlayerDeath( ply, attacker, dmginfo )
 
 	ply:CreateRagdoll()
-	
 	ply:AddDeaths( 1 )
 	
 	if ( attacker:IsValid() && attacker:IsPlayer() ) then
@@ -95,7 +103,7 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 		end
 		
 	end
-	
+
 end
 
 

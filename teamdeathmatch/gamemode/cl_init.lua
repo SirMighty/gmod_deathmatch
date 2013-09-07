@@ -52,7 +52,6 @@ function GM:Initialize( )
 	GAMEMODE.ShowScoreboard = false
 	print( "--------- cl_initialize --------------" )
 	set_team()
-
 	
 end
 
@@ -165,8 +164,8 @@ end
 function GM:GetTeamColor( ent )
 
 	local team = TEAM_UNASSIGNED
-	if (ent.Team) then team = ent:Team() end
-	return GAMEMODE:GetTeamNumColor( team )
+	--if (ent.Team) then team = ent:Team() end
+	return GAMEMODE:GetTeamNumColor( ent.team )
 
 end
 

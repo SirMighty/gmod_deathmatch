@@ -16,8 +16,10 @@ end
 -----------------------------------------------------------]]
 function GM:SetPlayerSpeed( ply, walk, run )
 
-	ply:SetWalkSpeed( walk )
-	ply:SetRunSpeed( run )
+	--ply:SetWalkSpeed( walk )
+	--ply:SetRunSpeed( run )
+	ply:SetWalkSpeed( 400 )
+	ply:SetRunSpeed( 1000 )
 	
 end
 

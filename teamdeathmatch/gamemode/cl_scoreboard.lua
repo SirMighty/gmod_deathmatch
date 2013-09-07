@@ -71,7 +71,7 @@ local PLAYER_LINE =
 		self.Player = pl
 
 		self.Avatar:SetPlayer( pl )
-		self.Name:SetText( pl:Nick() )
+		self.Name:SetText( pl.Nick())
 
 		self:Think( self )
 
