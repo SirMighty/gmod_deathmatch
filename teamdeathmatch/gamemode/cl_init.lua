@@ -25,7 +25,7 @@ team_1:SetSize( 190, 80 )
 team_1:SetText( "Blue Team" )
 team_1.DoClick = function() --Make the player join team 1
     RunConsoleCommand( "Blue_Team" )
-end
+end 
  
 team_2 = vgui.Create( "DButton", frame )
 team_2:SetPos( 10, 110 ) --Place it next to our previous one

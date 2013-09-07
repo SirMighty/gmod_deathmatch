@@ -12,7 +12,7 @@ GM.PlayerSpawnTime = {}
 concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
 concommand.Add( "Orange_Team", Orange_Team ) --Add the command to set the players team to team 2 
 
-
+ 
 --[[---------------------------------------------------------
    Name: gamemode:Initialize( )
    Desc: Called immediately after starting the gamemode 
