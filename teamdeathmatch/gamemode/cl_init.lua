@@ -20,7 +20,7 @@ frame:ShowCloseButton( true )
 frame:MakePopup()
  
 team_1 = vgui.Create( "DButton", frame )
-team_1:SetPos( 10, 5 ) --Place it half way on the tall and 5 units in horizontal
+team_1:SetPos( 10, 15 ) --Place it half way on the tall and 5 units in horizontal
 team_1:SetSize( 100, 80 )
 team_1:SetText( "Blue Team" )
 team_1.DoClick = function() --Make the player join team 1
@@ -28,25 +28,26 @@ team_1.DoClick = function() --Make the player join team 1
 end
  
 team_2 = vgui.Create( "DButton", frame )
-team_2:SetPos( 10, 105 ) --Place it next to our previous one
+team_2:SetPos( 10, 115 ) --Place it next to our previous one
 team_2:SetSize( 100, 80 )
 team_2:SetText( "Orange Team" )
 team_2.DoClick = function() --Make the player join team 2
     RunConsoleCommand( "Orange_Team" )
 end
+end
   
-  function Blue_Team( ply ) 
+function Blue_Team( ply ) 
+	ply:SetTeam( 1 ) --Make the player join team 1 
+	ply:Spawn()
+end 
  
-     ply:SetTeam( 1 ) --Make the player join team 1 
-	 ply:Spawn()
- end 
- 
- function Orange_Team( ply ) 
+function Orange_Team( ply ) 
  
      ply:SetTeam( 2 ) --Make the player join team 2 
 	 ply:Spawn()
 
 end
+
 concommand.Add( "team_menu", set_team )
  
 concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
