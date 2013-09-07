@@ -11,13 +11,13 @@ GM.PlayerSpawnTime = {}
 
 function Blue_Team( ply )
  
-    ply:SetTeam( 1 )
+    ply:SetTeam( Blue )
  
 end
  
 function Orange_Team( ply )
  
-    ply:SetTeam( 2 )
+    ply:SetTeam( Orange )
 end
 
 concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
