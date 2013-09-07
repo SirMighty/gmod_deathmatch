@@ -122,11 +122,11 @@ function playerforcerespawn( ply )
  
      if (CurTime()>=ply.nextspawn) then
           ply:Spawn()
-          if (ply:Team == 1) then 
-          	supplyblue( ply )
-          else
-          	supplyorange( ply )
-          end
+          --if (ply:Team == 1) then 
+          	--supplyblue( ply )
+          --else
+          	--supplyorange( ply )
+          --end
           ply.nextspawn = math.huge
      end
  
