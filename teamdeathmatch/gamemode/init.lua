@@ -12,7 +12,7 @@ GM.PlayerSpawnTime = {}
 -----------------------------------------------------------]]
 function GM:Initialize( )
 	print( "--------------------------------------------------" )
-	print( "-^Team Deathmatch by mightymadTV and RatPat ------" )
+	print( "- Team Deathmatch by mightymadTV and RatPat ------" )
 	print( "--------------------------------------------------" )
 end
 
