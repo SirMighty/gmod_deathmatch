@@ -671,7 +671,7 @@ end
 -----------------------------------------------------------]]
 function GM:GetFallDamage( ply, flFallSpeed )
 
-	if( GetConVarNumber( "mp_falldamage" ) > 0 ) then -- realistic fall damage is on
+	if( GetConVarNumber( "mp_falldamage" ) > 0 || true ) then -- realistic fall damage is on
 		return flFallSpeed * 0.225; -- near the Source SDK value
 	end
 	
