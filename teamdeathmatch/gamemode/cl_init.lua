@@ -384,7 +384,7 @@ end
 --
 function GM:ShouldDrawLocalPlayer( ply )
 
-	return player_manager.RunClass( ply, "ShouldDrawLocal" ) || true
+	return player_manager.RunClass( ply, "ShouldDrawLocal" )
 
 end
 
