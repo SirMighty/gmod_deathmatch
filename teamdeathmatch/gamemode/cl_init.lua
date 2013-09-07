@@ -26,6 +26,7 @@ Blue_Team:SetSize( 190, 80 )
 Blue_Team:SetText( "Blue Team" )
 Blue_Team.DoClick = function() --Make the player join team 1
     RunConsoleCommand( "blue" )
+    frame:Close()
 end 
  
 Orange_Team = vgui.Create( "DButton", frame )
@@ -34,6 +35,7 @@ Orange_Team:SetSize( 190, 80 )
 Orange_Team:SetText( "Orange Team" )
 Orange_Team.DoClick = function() --Make the player join team 2
     RunConsoleCommand( "orange" )
+    frame:Close()
 end
 
 end
