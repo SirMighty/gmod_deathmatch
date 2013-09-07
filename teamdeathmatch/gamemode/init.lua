@@ -15,6 +15,7 @@ function blue( ply )
     ply:Spawn()
     ply:StripWeapons()
     ply:Give( "weapon_crossbow" )
+    ply:Give( "weapon_crowbar" )
  
 end
 concommand.Add( "blue", blue )
@@ -25,6 +26,7 @@ function orange( ply )
     ply:Spawn()
     ply:StripWeapons()
     ply:Give( "weapon_pistol" )
+    ply:Give( "weapon_stunstick" )
 end
 concommand.Add( "orange", orange )
 
