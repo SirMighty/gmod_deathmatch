@@ -103,18 +103,22 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 		end
 		
 	end
+	return false
 
 end
 
 -- Set the maximum time in seconds before a player must respawn
 local maxdeathtime = 5;
  
+ function falsee()
+ 	return false
+ end
 -- Create a hook for the GM:PlayerDeath() function that
 -- sets our two variables when the player dies
 function player_initdeath( ply, wep, killer )
  
      ply.nextspawn = CurTime() + maxdeathtime; -- set when we want to spawn
- 
+ 	hook.Add( "PlayerDeathThink", "player_force_wait", falsee );
 end
 hook.Add( "PlayerDeath", "player_initalize_dvars", player_initdeath );
  
