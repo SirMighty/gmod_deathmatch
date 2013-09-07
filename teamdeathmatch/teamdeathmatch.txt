@@ -1,0 +1,5 @@
+"teamdeathmatch"
+{
+	"title"		"Team Deathmatch"
+	"base"		"base"
+}
