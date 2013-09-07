@@ -13,6 +13,8 @@ function blue( ply )
  
     ply:SetTeam( 1 )
     ply:Spawn()
+    ply:StripWeapons()
+    ply:Give( "weapon_crossbow" )
  
 end
 concommand.Add( "blue", blue )
@@ -21,6 +23,8 @@ function orange( ply )
  
     ply:SetTeam( 2 )
     ply:Spawn()
+    ply:StripWeapons()
+    ply:Give( "weapon_pistol" )
 end
 concommand.Add( "orange", orange )
 
