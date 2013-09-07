@@ -18,11 +18,11 @@ include( 'player_shd.lua' )
 include( 'animations.lua' )
 include( 'player_class/player_default.lua' )
 
-GM.Name 		= "Base Gamemode"
-GM.Author 		= "Garry Newman"
-GM.Email 		= "garrynewman@gmail.com"
-GM.Website 		= "www.garry.tv"
-GM.TeamBased 	= false
+GM.Name 		= "Teamdeathmatch"
+GM.Author 		= "mightymadTV & RatPat"
+GM.Email 		= "info@gobcraft.net"
+GM.Website 		= "www.gobcraft.net"
+GM.TeamBased 	= true
 
 
 --[[---------------------------------------------------------

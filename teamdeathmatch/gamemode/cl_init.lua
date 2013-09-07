@@ -17,6 +17,8 @@ function GM:Initialize( )
 	GAMEMODE.ShowScoreboard = false
 	print( "--------- cl_initialize --------------" )
 	local ply = LocalPlayer();
+	self.Player:Give( "weapon_pistol" )
+	self.Player:GiveAmmo( 255, "Pistol", true )
 
 	
 end
