@@ -89,6 +89,7 @@ end
    Name: gamemode:DoPlayerDeath( )
    Desc: Carries out actions when the player dies 		 
 -----------------------------------------------------------]]
+
 function GM:DoPlayerDeath( ply, attacker, dmginfo )
 	
 	ply:CreateRagdoll()
@@ -123,7 +124,27 @@ end
 hook.Add( "PlayerDeath", "player_initalize_dvars", player_initdeath );
  
 function playerforcerespawn( ply )
+	time = ply.nextspawn - maxdeathtime
+	 if (CurTime()>=time && CurTime()<=time + 1) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning in 5...")
+	 end
+	 if (CurTime()>=time + 1 && CurTime()<=time + 2) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning in 4...")
+	 end
+	 if (CurTime()>=time + 2 && CurTime()<=time + 3) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning in 3...")
+	 end
+	 if (CurTime()>=time + 3 && CurTime()<=time + 4) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning in 2...")
+	 end
+	 if (CurTime()>=time + 4 && CurTime()<=time + 5) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning in 1...")
+	 end
+	 if (CurTime()>=time + 5 && CurTime()<=time + 6) then
+	 	ply:PrintMessage( HUD_PRINTCENTER, "Respawning...")
+	 end
      if (CurTime()>=ply.nextspawn) then
+     	ply:PrintMessage( HUD_PRINTCENTER, " ")
           ply:Spawn()
           if (ply:Team()==1) then 
           	supplyblue( ply )
