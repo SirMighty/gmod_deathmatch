@@ -19,7 +19,7 @@ frame:SetDraggable( false )
 frame:ShowCloseButton( true )
 frame:MakePopup()
  
- 
+
 team_1 = vgui.Create( "DButton", frame )
 team_1:SetPos( 10, 30 ) --Place it half way on the tall and 5 units in horizontal
 team_1:SetSize( 190, 80 )
@@ -35,6 +35,7 @@ team_2:SetText( "Orange Team" )
 team_2.DoClick = function() --Make the player join team 2
     RunConsoleCommand( "Orange_Team" )
 end
+
 end
 
 concommand.Add( "team_menu", set_team )
