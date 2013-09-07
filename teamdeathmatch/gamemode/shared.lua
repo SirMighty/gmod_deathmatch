@@ -22,7 +22,7 @@ GM.Name 		= "Teamdeathmatch"
 GM.Author 		= "mightymadTV & RatPat"
 GM.Email 		= "info@gobcraft.net"
 GM.Website 		= "www.gobcraft.net"
-GM.TeamBased 	= true
+GM.TeamBased 	= false
 
 
 --[[---------------------------------------------------------
