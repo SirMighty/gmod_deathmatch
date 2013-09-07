@@ -648,7 +648,7 @@ end
 -----------------------------------------------------------]]
 function GM:PlayerSpray( ply )
 	
-	return false
+	return true
 	
 end
 
