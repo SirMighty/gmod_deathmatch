@@ -90,7 +90,7 @@ end
    Desc: Carries out actions when the player dies 		 
 -----------------------------------------------------------]]
 function GM:DoPlayerDeath( ply, attacker, dmginfo )
-
+	
 	ply:CreateRagdoll()
 	ply:AddDeaths( 1 )
 	
@@ -105,6 +105,34 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 	end
 
 end
+
+-- Set the maximum time in seconds before a player must respawn
+local maxdeathtime = 5;
+ 
+-- Create a hook for the GM:PlayerDeath() function that
+-- sets our two variables when the player dies
+function player_initdeath( ply, wep, killer )
+ 
+     ply.nextspawn = CurTime() + maxdeathtime; -- set when we want to spawn
+ 
+end
+hook.Add( "PlayerDeath", "player_initalize_dvars", player_initdeath );
+ 
+function playerforcerespawn( ply )
+ 
+     if (CurTime()>=ply.nextspawn) then
+          ply:Spawn()
+          if (ply:Team == 1) then 
+          	supplyblue( ply )
+          else
+          	supplyorange( ply )
+          end
+          ply.nextspawn = math.huge
+     end
+ 
+end
+ 
+hook.Add( "PlayerDeathThink", "player_step_forcespawn", playerforcerespawn );
 
 
 --[[---------------------------------------------------------
