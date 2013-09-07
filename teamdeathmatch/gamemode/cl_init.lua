@@ -25,7 +25,7 @@ Blue_Team:SetPos( 10, 30 ) --Place it half way on the tall and 5 units in horizo
 Blue_Team:SetSize( 190, 80 )
 Blue_Team:SetText( "Blue Team" )
 Blue_Team.DoClick = function() --Make the player join team 1
-    RunConsoleCommand( "Blue_Team" )
+    RunConsoleCommand( "blue" )
 end 
  
 Orange_Team = vgui.Create( "DButton", frame )
@@ -33,7 +33,7 @@ Orange_Team:SetPos( 10, 110 ) --Place it next to our previous one
 Orange_Team:SetSize( 190, 80 )
 Orange_Team:SetText( "Orange Team" )
 Orange_Team.DoClick = function() --Make the player join team 2
-    RunConsoleCommand( "Orange_Team" )
+    RunConsoleCommand( "orange" )
 end
 
 end
