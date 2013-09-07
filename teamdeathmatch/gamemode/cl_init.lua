@@ -12,7 +12,7 @@ function set_team()
  
 local frame = vgui.Create( "DFrame" )
 frame:SetPos( ScrW() / 2, ScrH() / 2 ) --Set the window in the middle of the players screen/game window
-frame:SetSize( 200, 205 ) --Set the size
+frame:SetSize( 210, 205 ) --Set the size
 frame:SetTitle( "Change Team" ) --Set title
 frame:SetVisible( true )
 frame:SetDraggable( false )
