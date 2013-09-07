@@ -19,6 +19,7 @@ frame:SetDraggable( false )
 frame:ShowCloseButton( true )
 frame:MakePopup()
  
+ 
 team_1 = vgui.Create( "DButton", frame )
 team_1:SetPos( 10, 30 ) --Place it half way on the tall and 5 units in horizontal
 team_1:SetSize( 190, 80 )
