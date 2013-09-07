@@ -11,6 +11,9 @@ GM.PlayerSpawnTime = {}
    Desc: Called immediately after starting the gamemode 
 -----------------------------------------------------------]]
 function GM:Initialize( )
+	print( "--------------------------------------------------" )
+	print( "-^Team Deathmatch by mightymadTV and RatPat ------" )
+	print( "--------------------------------------------------" )
 end
 
 
