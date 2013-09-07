@@ -16,6 +16,7 @@ function blue( ply )
     ply:StripWeapons()
     ply:Give( "weapon_crossbow" )
     ply:Give( "weapon_crowbar" )
+    ply.GiveAmmo(50, "XBowBolt")
  
 end
 concommand.Add( "blue", blue )
@@ -27,6 +28,7 @@ function orange( ply )
     ply:StripWeapons()
     ply:Give( "weapon_pistol" )
     ply:Give( "weapon_stunstick" )
+    ply.GiveAmmo(100, "Pistol")
 end
 concommand.Add( "orange", orange )
 
