@@ -50,8 +50,6 @@ end
 
 concommand.Add( "team_menu", set_team )
  
-concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
-concommand.Add( "Orange_Team", Orange_Team ) --Add the command to set the players team to team 2 
 
 --[[---------------------------------------------------------
    Name: gamemode:Initialize( )
