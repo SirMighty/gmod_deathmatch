@@ -9,6 +9,17 @@ include( 'variable_edit.lua' )
 
 GM.PlayerSpawnTime = {}
 
+function Blue_Team( ply )
+ 
+    ply:SetTeam( 1 )
+ 
+end
+ 
+function Orange_Team( ply )
+ 
+    ply:SetTeam( 2 )
+end
+
 concommand.Add( "Blue_Team", Blue_Team ) --Add the command to set the players team to team 1 
 concommand.Add( "Orange_Team", Orange_Team ) --Add the command to set the players team to team 2 
 

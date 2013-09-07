@@ -35,18 +35,6 @@ team_2.DoClick = function() --Make the player join team 2
     RunConsoleCommand( "Orange_Team" )
 end
 end
-  
-function Blue_Team( ply ) 
-	ply:SetTeam( 1 ) --Make the player join team 1 
-	ply:Spawn()
-end 
- 
-function Orange_Team( ply ) 
- 
-     ply:SetTeam( 2 ) --Make the player join team 2 
-	 ply:Spawn()
-
-end
 
 concommand.Add( "team_menu", set_team )
  
