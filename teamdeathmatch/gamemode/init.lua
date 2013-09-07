@@ -22,7 +22,6 @@ function orange( ply )
     ply:SetTeam( 2 )
     ply:Spawn()
     supplyorange( ply )
-    ply:SetFOV(120, 5)
 end
 concommand.Add( "orange", orange )
 

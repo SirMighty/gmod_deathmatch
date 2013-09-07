@@ -238,6 +238,33 @@ function GM:PlayerSpawn( pl )
 	
 	end
 
+	local oldhands = pl:GetHands()
+	if ( IsValid( oldhands ) ) then oldhands:Remove() end
+
+	local hands = ents.Create( "gmod_hands" )
+	if ( IsValid( hands ) ) then
+		pl:SetHands( hands )
+		hands:SetOwner( pl )
+
+		-- Which hands should we use?
+		local cl_playermodel = pl:GetInfo( "cl_playermodel" )
+		local info = player_manager.TranslatePlayerHands( cl_playermodel )
+		if ( info ) then
+			hands:SetModel( info.model )
+			hands:SetSkin( info.skin )
+			hands:SetBodyGroups( info.body )
+		end
+
+		-- Attach them to the viewmodel
+		local vm = pl:GetViewModel( 0 )
+		hands:AttachToViewmodel( vm )
+
+		vm:DeleteOnRemove( hands )
+		pl:DeleteOnRemove( hands )
+
+		hands:Spawn()
+ 	end
+
 	-- Stop observer mode
 	pl:UnSpectate()
 
