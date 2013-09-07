@@ -94,7 +94,7 @@ timer.Create( "HostnameThink", 30, 0, HostnameThink )
 -----------------------------------------------------------]]
 function GM:ShowTeam( ply )
 
-	if (!GAMEMODE.TeamBased) then return end
+	if (!GAMEMODE.TeamBased || true) then return end
 	
 	local TimeBetweenSwitches = GAMEMODE.SecondsBetweenTeamSwitches or 10
 	if ( ply.LastTeamSwitch && RealTime()-ply.LastTeamSwitch < TimeBetweenSwitches ) then

@@ -14,7 +14,10 @@ include( 'cl_voice.lua' )
 -----------------------------------------------------------]]
 function GM:Initialize( )
 
-	GAMEMODE.ShowScoreboard = true
+	GAMEMODE.ShowScoreboard = false
+	print( "--------- cl_initialize --------------" )
+	local ply = LocalPlayer();
+
 	
 end
 
@@ -381,7 +384,7 @@ end
 --
 function GM:ShouldDrawLocalPlayer( ply )
 
-	return player_manager.RunClass( ply, "ShouldDrawLocal" )
+	return player_manager.RunClass( ply, "ShouldDrawLocal" ) || true
 
 end
 
