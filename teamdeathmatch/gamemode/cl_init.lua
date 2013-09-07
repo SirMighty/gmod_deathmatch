@@ -14,7 +14,7 @@ include( 'cl_voice.lua' )
 -----------------------------------------------------------]]
 function GM:Initialize( )
 
-	GAMEMODE.ShowScoreboard = false
+	GAMEMODE.ShowScoreboard = true
 	
 end
 
