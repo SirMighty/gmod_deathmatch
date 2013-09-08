@@ -46,6 +46,7 @@ function supplyorange( ply )
    	ply:Give( "weapon_stunstick" )
     ply:GiveAmmo(100, "Pistol")
     ply:SetHealth(150)
+    ply:SetArmor(75)
 end
 
 
