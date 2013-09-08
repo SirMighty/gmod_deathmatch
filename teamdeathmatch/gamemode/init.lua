@@ -9,15 +9,6 @@ include( 'variable_edit.lua' )
 
 GM.PlayerSpawnTime = {}
 
-funcion GM:PlayerShouldTakeDamage (ply, victim)
-	if ply:IsPlayer() then
-		if ply:Team() == victim:Team() then
-			return false
-		end
-	end
-	return true
-end
-
 function blue( ply )
  	ply:GodDisable()
     ply:SetTeam( 1 )
