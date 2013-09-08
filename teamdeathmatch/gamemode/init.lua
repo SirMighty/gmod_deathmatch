@@ -10,7 +10,7 @@ include( 'variable_edit.lua' )
 GM.PlayerSpawnTime = {}
 
 function blue( ply )
- 
+ 	ply:GodDisable()
     ply:SetTeam( 1 )
     ply:Spawn()
     supplyblue( ply )
@@ -18,7 +18,7 @@ end
 concommand.Add( "blue", blue )
  
 function orange( ply )
- 
+ 	ply:GodDisable()
     ply:SetTeam( 2 )
     ply:Spawn()
     supplyorange( ply )

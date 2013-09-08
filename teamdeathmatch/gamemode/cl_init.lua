@@ -73,6 +73,8 @@ function GM:Initialize( )
 	GAMEMODE.ShowScoreboard = false
 	print( "--------- cl_initialize --------------" )
 	set_team()
+	local ply = LocalPlayer()
+	ply:GodEnable()
 	
 end
 
