@@ -107,6 +107,7 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 				ply:AddDeaths(-1)
 			else
 				attacker:AddFrags( 1 )
+				team:AddScore(attacker:Team(), 1)
 			end
 		end
 		
