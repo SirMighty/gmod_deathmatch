@@ -21,10 +21,24 @@ function NewHUD()
 	local HP = ply:Health()
 	local Armor = ply:Armor()
 
-	draw.RoundedBox( 4, 60, ScrH() - 100, 300, 40, Color(55, 99, 176, 30) )
-	draw.RoundedBox( 4, 60, ScrH() - 100, math.Clamp(HP, 0, 200)*2, 40, Color( 255, 0, 0, 255) )
-	draw.RoundedBox( 4, 60, ScrH() - 100 + 40 + 5, math.Clamp(Armor, 0, 200)*2, 20, Color( 255, 255, 0, 128) )
-	draw.SimpleText( HP, "Trebuchet24", 60 + 15, ScrH() - 120, Color(255, 150, 150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	if(HP < 0) then
+		HP = 0
+	end
+
+	if(Armor < 0) then
+		Armor = 0
+	end
+
+	draw.RoundedBox(8, 50, ScrH() - 140, 320, 115, Color(50, 50, 50, 150))
+
+	draw.RoundedBox( 2, 60, ScrH() - 100, 300, 40, Color(255, 255, 255, 50) )
+	draw.RoundedBox( 2, 60, ScrH() - 100, math.Clamp(HP, 0, 200)*2, 40, Color( 255, 0, 0, 255) )
+	draw.RoundedBox( 2, 60, ScrH() - 100 + 40 + 5, math.Clamp(Armor, 0, 200)*2, 20, Color( 255, 255, 0, 128) )
+	draw.SimpleText( "HP: " .. HP, "Trebuchet24", 60, ScrH() - 120, Color(255, 0, 0), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+
+	draw.SimpleText( "Blue " .. team:TotalFrags(1), "HUDNumber", ScrW() / 2 - 15, 0, Color( 0, 0, 255, 220 ), TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM)
+	draw.SimpleText( "/", "HUDNumber", ScrW() / 2, 0, Color( 50, 50, 50, 220 ), TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM)
+	draw.SimpleText( "" .. team:TotalFrags(2) .. " Orange", "HUDNumber", ScrW() / 2 + 15, 0, Color( 255, 150, 0, 220 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM)
 end
 
 hook.Add("HUDPaint", "NewHUD", NewHUD)
@@ -72,10 +86,7 @@ function GM:Initialize( )
 
 	GAMEMODE.ShowScoreboard = false
 	print( "--------- cl_initialize --------------" )
-	set_team()
-	local ply = LocalPlayer()
-	ply:GodEnable()
-	
+	set_team()	
 end
 
 --[[---------------------------------------------------------
