@@ -150,6 +150,7 @@ function GM:PlayerDeath( Victim, Inflictor, Attacker )
 		if ( !IsValid( Inflictor ) ) then Inflictor = Attacker end
 	
 	end
+
 	
 	if (Attacker == Victim) then
 	
@@ -564,7 +565,7 @@ end
 		Return true to allow action
 -----------------------------------------------------------]]
 function GM:PlayerSwitchFlashlight( ply, SwitchOn )
-	return ply:CanUseFlashlight()
+	return ply:CanUseFlashlight() || true
 end
 
 --[[---------------------------------------------------------
