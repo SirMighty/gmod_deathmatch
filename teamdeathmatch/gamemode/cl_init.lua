@@ -41,9 +41,9 @@ function NewHUD()
 	draw.SimpleText( "HP: " .. HP, "Trebuchet24", 60, ScrH() - 120, Color(255, 0, 0), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
 	--Teamscore
-	draw.SimpleText( "" .. team:TotalFrags(1), "HUDNumber", ScrW() / 2 - 15, 0, Color( 0, 0, 255, 220 ), TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM)
-	draw.SimpleText( "/", "HUDNumber", ScrW() / 2, 0, Color( 50, 50, 50, 220 ), TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM)
-	draw.SimpleText( "" .. team:TotalFrags(2) .. "", "HUDNumber", ScrW() / 2 + 15, 0, Color( 255, 150, 0, 220 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM)
+	draw.SimpleText( "" .. team:TotalFrags(1), "DermaLarge", ScrW() / 2 - 15, 2, Color( 0, 0, 255, 220 ), TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM)
+	draw.SimpleText( "/", "DermaLarge", ScrW() / 2, 2, Color( 50, 50, 50, 220 ), TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM)
+	draw.SimpleText( "" .. team:TotalFrags(2) .. "", "DermaLarge", ScrW() / 2 + 15, 2, Color( 255, 150, 0, 220 ), TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM)
 end
 
 hook.Add("HUDPaint", "NewHUD", NewHUD)
