@@ -8,6 +8,26 @@ include( 'cl_deathnotice.lua' )
 include( 'cl_pickteam.lua' )
 include( 'cl_voice.lua' )
 
+function HUDHide( myhud )
+	for k, v in pairs {"CHudHealth","CHudBattery"} do
+		if myhud == v then return false end
+	end
+end
+
+hook.Add("HUDShouldDraw","HUDHide",HUDHide)
+
+function NewHUD()
+	local ply = LocalPlayer()
+	local HP = ply:Health()
+	local Armor = ply:Armor()
+
+	draw.RoundedBox( 4, 120, ScrH() - 100, 200, 40, Color(55, 99, 176, 30) )
+	draw.RoundedBox( 4, 120, ScrH() - 100, math.Clamp(HP, 0, 200)*2, 40, Color( 255, 0, 0, 255) )
+	draw.RoundedBox( 4, 120, ScrH() - 100, math.Clamp(Armor, 0, 200)*2, 40, Color( 255, 255, 255, 40) )
+end
+
+hook.Add("HUDPaint", "NewHUD", NewHUD)
+
 function set_team()
  
 local frame = vgui.Create( "DFrame" )
