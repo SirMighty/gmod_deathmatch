@@ -676,7 +676,7 @@ end
 -----------------------------------------------------------]]
 function GM:PlayerSpray( ply )
 	
-	return true
+	return true && false --enable spraying
 	
 end
 
