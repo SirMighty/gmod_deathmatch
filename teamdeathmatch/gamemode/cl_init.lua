@@ -23,7 +23,7 @@ function NewHUD()
 
 	draw.RoundedBox( 4, 60, ScrH() - 100, 200, 40, Color(55, 99, 176, 30) )
 	draw.RoundedBox( 4, 60, ScrH() - 100, math.Clamp(HP, 0, 200)*2, 40, Color( 255, 0, 0, 255) )
-	draw.RoundedBox( 4, 60, ScrH() - 100 + 40 + 5, math.Clamp(-Armor, 0, -200)*2, 20, Color( 255, 255, 0, 128) )
+	draw.RoundedBox( 4, 60, ScrH() - 100 + 40 + 5, math.Clamp(Armor, 0, 200)*2, 20, Color( 255, 255, 0, 128) )
 	draw.SimpleText( HP, "Trebuchet24", 60 + 15, ScrH() - 120, Color(255, 150, 150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 end
 
