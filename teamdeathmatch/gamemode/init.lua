@@ -102,7 +102,12 @@ function GM:DoPlayerDeath( ply, attacker, dmginfo )
 		if ( attacker == ply ) then
 			attacker:AddFrags( -1 )
 		else
-			attacker:AddFrags( 1 )
+			if (attacker:Team() == ply:Team()) then
+				attacker:AddFrags( -1 )
+				ply:AddDeaths(-1)
+			else
+				attacker:AddFrags( 1 )
+			end
 		end
 		
 	end
