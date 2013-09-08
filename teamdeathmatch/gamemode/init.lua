@@ -37,7 +37,7 @@ function supplyblue( ply )
     ply:Give( "weapon_crowbar" )
     ply:GiveAmmo(50, "XBowBolt")
     ply:SetHealth(150)
-    ply:SetModel("models/player/t_leet.mdl")
+    ply:SetModel("models/player/urban.mdl")
 end
 concommand.Add("supplyblue", supplyblue)
 
@@ -48,7 +48,7 @@ function supplyorange( ply )
     ply:GiveAmmo(100, "Pistol")
     ply:SetHealth(150)
     ply:SetArmor(75)
-    ply:SetModel("models/player/ct_gsg9.mdl")
+    ply:SetModel("models/player/leet.mdl")
 end
 
 
