@@ -9,7 +9,7 @@
 --include( 'cl_voice.lua' )
 
 function HUDHide( myhud )
-	for k, v in pairs {"CHudHealth","CHudBattery"} do
+	for k, v in pairs {"CHudHealth","CHudBattery", "CHudCrosshair"} do
 		if myhud == v then return false end
 	end
 end
@@ -29,7 +29,16 @@ function NewHUD()
 		Armor = 0
 	end
 
+	local CROSSHAIR_COLOR = Color(255,0,0,255)
+
 	--Fadenkreuz
+	draw.RoundedBox(0, (ScrW() / 2) - 15, (ScrH() / 2), 10, 1, CROSSHAIR_COLOR)
+	draw.RoundedBox(0, (ScrW() / 2) + 5, (ScrH() / 2), 10, 1, CROSSHAIR_COLOR)
+
+	draw.RoundedBox(0, (ScrW() / 2) - 1, (ScrH() / 2), 1, 1, CROSSHAIR_COLOR)
+
+	draw.RoundedBox(0, (ScrW() / 2) - 1, (ScrH() / 2) - 15, 1, 10, CROSSHAIR_COLOR)
+	draw.RoundedBox(0, (ScrW() / 2) - 1, (ScrH() / 2) + 5, 1, 10, CROSSHAIR_COLOR)
 
 	--HealthBox
 	draw.RoundedBox(8, 50, ScrH() - 140, 320, 115, Color(50, 50, 50, 150))
