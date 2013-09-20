@@ -24,7 +24,7 @@ function DrawPlayerInfo( )
 				local position = Vector( position.x, position.y, position.z + 75 )
 				local screenpos = position:ToScreen( )
 				local dist = position:Distance( LocalPlayer( ):GetPos( ) )
-				local dist = dist / 2
+				--local dist = dist / 2
 				local dist = math.floor( dist )
 				
 				if( dist > 100 ) then
@@ -49,8 +49,8 @@ function DrawPlayerInfo( )
 				if( v:GetNWString("vTitle") == nil ) then
 					draw.SimpleTextOutlined(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
 				else
-					draw.SimpleTextOutlined(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
-					draw.SimpleTextOutlined(v:GetNWString("vTitle"), "Trebuchet24", screenpos.x, screenpos.y+27, Color(255,255,255,alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))				
+					draw.SimpleText(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
+					draw.SimpleText(v:GetNWString("vTitle"), "Trebuchet24", screenpos.x, screenpos.y+27, Color(255,255,255,alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))				
 				end
 				if( v:GetNWInt("chatopen") == 1 ) then
 					draw.SimpleTextOutlined("Typing", "Default", screenpos.x, screenpos.y+45, Color(255, 0, 0, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
