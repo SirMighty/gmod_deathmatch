@@ -20,7 +20,7 @@ function DrawPlayerInfo( )
 			if( v:Alive( ) ) then
 			
 				local alpha = 0
-				local color = Color(255,255,255)
+				
 				local position = v:GetPos( )
 				local position = Vector( position.x, position.y, position.z + 75 )
 				local screenpos = position:ToScreen( )
@@ -47,6 +47,8 @@ function DrawPlayerInfo( )
 					alpha = 0
 					
 				end
+
+				local color = Color(255,255,255, alpha)
 				if( v:GetNWString("vTitle") == nil ) then
 					draw.SimpleTextOutlined(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
 				else
