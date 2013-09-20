@@ -10,6 +10,7 @@
 
 --Test start
 CreateClientConVar("vtarget", "1", true, false)
+
 function DrawPlayerInfo( )
  if( LocalPlayer():GetInfo("vtarget") == "1" ) then
 	for k, v in pairs( player.GetAll( ) ) do	
