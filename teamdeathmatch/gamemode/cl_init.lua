@@ -20,7 +20,7 @@ function DrawPlayerInfo( )
 			if( v:Alive( ) ) then
 			
 				local alpha = 0
-				local color = Color(255,255,255,alpha)
+				local color = Color(255,255,255)
 				local position = v:GetPos( )
 				local position = Vector( position.x, position.y, position.z + 75 )
 				local screenpos = position:ToScreen( )
