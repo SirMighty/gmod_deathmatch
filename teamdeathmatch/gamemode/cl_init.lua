@@ -8,6 +8,69 @@
 --include( 'cl_pickteam.lua' )
 --include( 'cl_voice.lua' )
 
+--Test start
+surface.CreateFont( "coolvetica", 18, 500, true, false, "InfoBar2" )
+surface.CreateFont( "coolvetica", 25, 500, true, false, "InfoBar3" )
+CreateClientConVar("vtarget", "1", true, false)
+function DrawPlayerInfo( )
+ if( LocalPlayer():GetInfo("vtarget") == "1" ) then
+	for k, v in pairs( player.GetAll( ) ) do	
+	
+		if( v != LocalPlayer( ) ) then
+		
+			if( v:Alive( ) ) then
+			
+				local alpha = 0
+				local position = v:GetPos( )
+				local position = Vector( position.x, position.y, position.z + 75 )
+				local screenpos = position:ToScreen( )
+				local dist = position:Distance( LocalPlayer( ):GetPos( ) )
+				local dist = dist / 2
+				local dist = math.floor( dist )
+				
+				if( dist > 100 ) then
+				
+					alpha = 255 - ( dist - 100 )
+					
+				else
+				
+					alpha = 255
+					
+				end
+				
+				if( alpha > 255 ) then
+				
+					alpha = 255
+					
+				elseif( alpha < 0 ) then
+				
+					alpha = 0
+					
+				end
+				if( v:GetNWString("vTitle") == nil ) then
+					draw.SimpleTextOutlined(v:Nick(), "InfoBar3", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
+				else
+					draw.SimpleTextOutlined(v:Nick(), "InfoBar3", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
+					draw.SimpleTextOutlined(v:GetNWString("vTitle"), "InfoBar2", screenpos.x, screenpos.y+27, Color(255,255,255,alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))				
+				end
+				if( v:GetNWInt("chatopen") == 1 ) then
+					draw.SimpleTextOutlined("Typing", "Default", screenpos.x, screenpos.y+45, Color(255, 0, 0, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
+				end
+					
+					
+				
+				
+			end
+			
+		end
+		
+	end
+ end
+end
+hook.Add("HUDPaint", "vTargetPaint", DrawPlayerInfo)
+hook.Add("HUDDrawTargetID", "vTargetRemove", function() return false end)
+---Test end
+
 function HUDHide( myhud )
 	for k, v in pairs {"CHudHealth","CHudBattery", "CHudCrosshair"} do
 		if myhud == v then return false end
