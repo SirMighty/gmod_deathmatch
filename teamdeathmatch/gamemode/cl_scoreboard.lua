@@ -1,8 +1,4 @@
 
-include("vgui/menubackground.lua");
-
-surface.CreateFont("coolvetica", 19, 500, true, false, "Team Deathmatch by RatPat and MightyMadTV")
-
 surface.CreateFont( "ScoreboardDefault",
 {
 	font		= "Helvetica",
@@ -34,7 +30,7 @@ local PLAYER_LINE =
 
 		self.Avatar		= vgui.Create( "AvatarImage", self.AvatarButton )
 		self.Avatar:SetSize( 32, 32 )
-		self.Avatar:SetMouseInputEnabled( false )		
+		self.Avatar:SetMouseInputEnabled( false )
 
 		self.Name		= self:Add( "DLabel" )
 		self.Name:Dock( FILL )
