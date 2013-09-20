@@ -1,4 +1,8 @@
 
+include("vgui/menubackground.lua");
+
+surface.CreateFont("coolvetica", 19, 500, true, false, "Team Deathmatch by RatPat and MightyMadTV")
+
 surface.CreateFont( "ScoreboardDefault",
 {
 	font		= "Helvetica",
