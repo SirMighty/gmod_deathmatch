@@ -20,7 +20,7 @@ function DrawPlayerInfo( )
 			if( v:Alive( ) ) then
 			
 				local alpha = 0
-				local color = v:Team():GetColor()
+				local color = team.GetColor(v:Team())
 				local position = v:GetPos( )
 				local position = Vector( position.x + 50, position.y, position.z + 75 )
 				local screenpos = position:ToScreen( )
