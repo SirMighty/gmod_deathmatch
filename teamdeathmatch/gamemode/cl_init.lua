@@ -10,7 +10,7 @@
 
 --Test start
 CreateClientConVar("vtarget", "1", true, false)
-
+surface.CreateFont("Calibri", ScreenScale(32), 400, true, false, "PlayerName")
 function DrawPlayerInfo( )
  if( LocalPlayer():GetInfo("vtarget") == "1" ) then
 	for k, v in pairs( player.GetAll( ) ) do	
@@ -50,9 +50,9 @@ function DrawPlayerInfo( )
 
 				local color = Color(255,255,255, alpha)
 				if( v:GetNWString("vTitle") == nil ) then
-					draw.SimpleTextOutlined(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
+					draw.SimpleTextOutlined(v:Nick(), "PlayerName", screenpos.x, screenpos.y, Color(team.GetColor(v:Team()).r, team.GetColor(v:Team()).g, team.GetColor(v:Team()).b, alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))
 				else
-					draw.SimpleTextOutlined(v:Nick(), "Trebuchet24", screenpos.x, screenpos.y, color, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, Color(0,0,0,alpha))
+					draw.SimpleTextOutlined(v:Nick(), "PlayerName", screenpos.x, screenpos.y, color, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 1, Color(0,0,0,alpha))
 					--draw.SimpleText(v:GetNWString("vTitle"), "Trebuchet24", screenpos.x, screenpos.y+27, Color(255,255,255,alpha), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0,0,0,alpha))				
 				end
 				if( v:GetNWInt("chatopen") == 1 ) then
